@@ -98,3 +98,8 @@ def add_class(desc):
     x.prereqs = desc['Prereqs']
     x.level = models.Level.objects.get(as_number = desc['level']) if desc['level'] else None
     x.save()
+
+def update_classes():
+    classes = get_docs_table()
+    for x in classes:
+        add_class(x)
