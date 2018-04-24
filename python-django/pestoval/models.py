@@ -11,6 +11,7 @@ class Location(models.Model):
 class Teacher(models.Model):
     password = models.CharField(max_length=100)
     is_admin = models.BooleanField()
+    email = models.CharField(max_length=100, blank=True)
     name = models.CharField(max_length=100)
     name_hebrew = models.CharField(max_length=100, blank=True)
     def __str__(self):
