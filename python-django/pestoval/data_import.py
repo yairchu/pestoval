@@ -94,8 +94,11 @@ def add_class(desc):
                 print('Adding teacher %s' % teacher)
                 x.teachers.add(teacher)
 
+    x.name_hebrew = desc['שיעור']
     x.description = desc['Description']
+    x.description_hebrew = desc['תיאור']
     x.prereqs = desc['Prereqs']
+    x.prereqs_hebrew = desc['דרישות-קדם']
     x.level = models.Level.objects.get(as_number = desc['level']) if desc['level'] else None
     x.save()
 
